@@ -1,0 +1,94 @@
+========================================
+COPY THIS ENTIRE FILE AND RUN IN SUPABASE
+========================================
+
+Go to: https://weowrsvvsqragqzvqzmn.supabase.co
+Click: SQL Editor → New Query
+Paste: Everything below this line
+Click: Run
+
+----------------------------------------
+
+-- Create WebsiteContent Table
+CREATE TABLE IF NOT EXISTS "WebsiteContent" (
+    id SERIAL PRIMARY KEY,
+    "heroTitle" TEXT NOT NULL,
+    "heroSubtitle" TEXT NOT NULL,
+    "heroTagline" TEXT NOT NULL,
+    "aboutText" TEXT NOT NULL,
+    "missionText" TEXT NOT NULL,
+    "visionText" TEXT NOT NULL,
+    "contactPhone" TEXT NOT NULL,
+    "contactEmail" TEXT NOT NULL,
+    "contactAddress" TEXT NOT NULL,
+    "workingHours" TEXT NOT NULL,
+    "updatedAt" TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- Create Treatment Table
+CREATE TABLE IF NOT EXISTS "Treatment" (
+    id SERIAL PRIMARY KEY,
+    name TEXT NOT NULL,
+    description TEXT NOT NULL,
+    price TEXT NOT NULL,
+    duration TEXT NOT NULL,
+    icon TEXT NOT NULL,
+    category TEXT NOT NULL,
+    "isActive" BOOLEAN DEFAULT true,
+    "createdAt" TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    "updatedAt" TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- Insert Initial Website Content
+INSERT INTO "WebsiteContent" (
+    "heroTitle",
+    "heroSubtitle",
+    "heroTagline",
+    "aboutText",
+    "missionText",
+    "visionText",
+    "contactPhone",
+    "contactEmail",
+    "contactAddress",
+    "workingHours"
+) VALUES (
+    'Welcome to Sanjeevani Ayurvedic Hospital',
+    'Experience the ancient wisdom of Ayurveda combined with modern healthcare facilities',
+    'Natural Healing & Wellness',
+    'Sanjeevani Ayurvedic Hospital is a premier healthcare institution dedicated to providing authentic Ayurvedic treatments and holistic wellness solutions. With over 20 years of experience, our team of expert Ayurvedic doctors and therapists are committed to restoring your health naturally.',
+    'To provide world-class Ayurvedic healthcare that promotes natural healing, prevents diseases, and enhances overall well-being.',
+    'To be the leading Ayurvedic healthcare provider, recognized globally for excellence in traditional healing practices.',
+    '+91 1234567890',
+    'info@sanjeevani.com',
+    '123 Wellness Street, Ayurveda City, State - 123456',
+    'Mon - Sat: 9:00 AM - 6:00 PM'
+);
+
+-- Insert Initial Treatments
+INSERT INTO "Treatment" (name, description, price, duration, icon, category) VALUES
+('Panchakarma Therapy', 'Complete detoxification and rejuvenation treatment', '₹15,000 - ₹50,000', '7-21 days', '🧘', 'Detoxification'),
+('Abhyanga (Ayurvedic Massage)', 'Traditional therapeutic massage with herbal oils', '₹1,500 - ₹3,000', '60-90 minutes', '💆', 'Therapy'),
+('Shirodhara', 'Continuous stream of warm oil on forehead for mental relaxation', '₹2,000 - ₹4,000', '45-60 minutes', '🧠', 'Therapy'),
+('Herbal Medicine', 'Natural remedies prepared from authentic herbs', '₹500 - ₹5,000', 'As prescribed', '🌱', 'Medicine'),
+('Nasya Therapy', 'Nasal administration of medicated oils for respiratory health', '₹1,000 - ₹2,500', '30-45 minutes', '👃', 'Therapy'),
+('Kati Basti', 'Specialized treatment for lower back pain and joint issues', '₹1,500 - ₹3,500', '45-60 minutes', '🦴', 'Pain Management');
+
+-- Create updated_at trigger function
+CREATE OR REPLACE FUNCTION update_updated_at_column()
+RETURNS TRIGGER AS $$
+BEGIN
+    NEW."updatedAt" = NOW();
+    RETURN NEW;
+END;
+$$ language 'plpgsql';
+
+-- Create triggers for auto-updating updatedAt
+CREATE TRIGGER update_websitecontent_updated_at BEFORE UPDATE ON "WebsiteContent"
+FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+
+CREATE TRIGGER update_treatment_updated_at BEFORE UPDATE ON "Treatment"
+FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+
+========================================
+DONE! You should see "Success. No rows returned"
+========================================
