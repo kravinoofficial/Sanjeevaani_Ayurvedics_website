@@ -112,15 +112,15 @@ export default function Home() {
             <div className="flex justify-between items-center h-20">
               
               {/* Logo Section */}
-              <a href="#home" className="flex items-center gap-4 group">
-                <div className="relative w-14 h-14 group-hover:scale-110 transition-transform duration-300">
+              <a href="#home" className="flex items-center gap-2 sm:gap-4 group">
+                <div className="relative w-10 h-10 sm:w-14 sm:h-14 group-hover:scale-110 transition-transform duration-300">
                   <Image src="/logo2.png" alt="Logo" width={56} height={56} className="object-contain" />
                 </div>
                 <div>
-                  <h1 className="text-2xl font-bold text-gray-900 group-hover:text-green-600 transition-colors">
+                  <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 group-hover:text-green-600 transition-colors">
                     {settings?.hospital_name || 'Sanjeevani'}
                   </h1>
-                  <p className="text-sm text-green-600 font-medium">Ayurvedic Hospital & Wellness Center</p>
+                  <p className="text-xs sm:text-sm text-green-600 font-medium hidden sm:block">Ayurvedic Hospital & Wellness Center</p>
                 </div>
               </a>
 
@@ -199,7 +199,7 @@ export default function Home() {
       </header>
 
       {/* Hero - Ayurvedic Aesthetic with Organic Shapes */}
-      <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-green-100 via-emerald-100 to-green-200">
+      <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-green-100 via-emerald-100 to-green-200 pt-20">
         
         {/* Organic Background Shapes */}
         <div className="absolute inset-0 overflow-hidden">
@@ -222,81 +222,81 @@ export default function Home() {
           <div className="absolute bottom-1/3 left-1/3 text-4xl opacity-10 animate-float" style={{animationDelay: '2s'}}>🌺</div>
         </div>
 
-        <div className="container mx-auto px-6 py-20 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16 items-center">
             
-            <div className="space-y-8">
-              <div className="inline-flex items-center gap-2 px-5 py-2 bg-white/80 backdrop-blur-sm rounded-full shadow-lg border border-green-200">
-                <span className="text-2xl">🌿</span>
-                <span className="text-green-700 font-semibold text-sm">Natural Healing & Wellness</span>
+            <div className="space-y-6 sm:space-y-8">
+              <div className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 bg-white/80 backdrop-blur-sm rounded-full shadow-lg border border-green-200">
+                <span className="text-xl sm:text-2xl">🌿</span>
+                <span className="text-green-700 font-semibold text-xs sm:text-sm">Natural Healing & Wellness</span>
               </div>
               
               <div>
-                <h1 className="text-6xl lg:text-7xl font-bold leading-tight mb-6">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
                   <span className="bg-gradient-to-r from-green-700 via-emerald-600 to-green-600 bg-clip-text text-transparent">
                     Ayurveda
                   </span>
                   <br />
                   <span className="text-gray-800">The Science of Life</span>
                 </h1>
-                <p className="text-xl text-gray-600 leading-relaxed">
+                <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">
                   Experience authentic Ayurvedic healing rooted in 5000 years of wisdom. Balance your body, restore harmony, and embrace holistic wellness.
                 </p>
               </div>
 
-              <div className="flex flex-wrap gap-4">
-                <a href="#contact" className="group px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-full font-semibold shadow-lg hover:shadow-xl hover:shadow-green-500/40 transition-all flex items-center gap-2">
+              <div className="flex flex-wrap gap-3 sm:gap-4">
+                <a href="#contact" className="group px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-full font-semibold shadow-lg hover:shadow-xl hover:shadow-green-500/40 transition-all flex items-center gap-2 text-sm sm:text-base">
                   Book Consultation
-                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </a>
-                <a href="#about" className="px-8 py-4 bg-white text-green-700 rounded-full font-semibold shadow-lg hover:shadow-xl border-2 border-green-200 hover:border-green-400 transition-all">
+                <a href="#about" className="px-6 sm:px-8 py-3 sm:py-4 bg-white text-green-700 rounded-full font-semibold shadow-lg hover:shadow-xl border-2 border-green-200 hover:border-green-400 transition-all text-sm sm:text-base">
                   Learn More
                 </a>
               </div>
 
-              <div className="flex items-center gap-8 pt-6">
+              <div className="flex items-center gap-4 sm:gap-6 md:gap-8 pt-6">
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-green-700">20+</div>
-                  <div className="text-sm text-gray-600">Years Experience</div>
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-700">20+</div>
+                  <div className="text-xs sm:text-sm text-gray-600">Years Experience</div>
                 </div>
-                <div className="w-px h-12 bg-green-200"></div>
+                <div className="w-px h-8 sm:h-10 md:h-12 bg-green-200"></div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-green-700">5000+</div>
-                  <div className="text-sm text-gray-600">Happy Patients</div>
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-700">5000+</div>
+                  <div className="text-xs sm:text-sm text-gray-600">Happy Patients</div>
                 </div>
-                <div className="w-px h-12 bg-green-200"></div>
+                <div className="w-px h-8 sm:h-10 md:h-12 bg-green-200"></div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-green-700">15+</div>
-                  <div className="text-sm text-gray-600">Expert Vaidyas</div>
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-700">15+</div>
+                  <div className="text-xs sm:text-sm text-gray-600">Expert Vaidyas</div>
                 </div>
               </div>
             </div>
 
-            <div className="relative">
+            <div className="relative mt-8 lg:mt-0">
               <div className="absolute -inset-4 bg-gradient-to-r from-green-400 to-emerald-400 rounded-[3rem] blur-2xl opacity-20"></div>
-              <div className="relative rounded-[3rem] overflow-hidden shadow-2xl">
-                <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1200&q=80" alt="Ayurvedic Healing" className="w-full h-[600px] object-cover" />
+              <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1200&q=80" alt="Ayurvedic Healing" className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-green-900/50 via-transparent to-transparent"></div>
                 
-                <div className="absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur-md rounded-2xl p-6 shadow-xl">
-                  <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center text-white text-2xl">
+                <div className="absolute bottom-4 left-4 right-4 sm:bottom-8 sm:left-8 sm:right-8 bg-white/95 backdrop-blur-md rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-xl">
+                  <div className="flex items-center gap-3 sm:gap-4">
+                    <div className="w-10 h-10 sm:w-14 sm:h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg sm:rounded-xl flex items-center justify-center text-white text-xl sm:text-2xl flex-shrink-0">
                       ✓
                     </div>
                     <div>
-                      <div className="font-bold text-gray-900">Certified Ayurvedic Center</div>
-                      <div className="text-sm text-green-700">Traditional Excellence Since 2004</div>
+                      <div className="font-bold text-gray-900 text-sm sm:text-base">Certified Ayurvedic Center</div>
+                      <div className="text-xs sm:text-sm text-green-700">Traditional Excellence Since 2004</div>
                     </div>
                   </div>
                 </div>
               </div>
               
-              <div className="absolute -top-6 -left-6 w-24 h-24 bg-gradient-to-br from-green-100 to-emerald-100 rounded-3xl shadow-xl flex items-center justify-center text-5xl animate-float border-2 border-green-200">
+              <div className="hidden sm:flex absolute -top-6 -left-6 w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-green-100 to-emerald-100 rounded-3xl shadow-xl items-center justify-center text-4xl sm:text-5xl animate-float border-2 border-green-200">
                 🌿
               </div>
-              <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-br from-green-100 to-emerald-100 rounded-3xl shadow-xl flex items-center justify-center text-5xl animate-float border-2 border-green-200" style={{animationDelay: '1s'}}>
+              <div className="hidden sm:flex absolute -bottom-6 -right-6 w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-green-100 to-emerald-100 rounded-3xl shadow-xl items-center justify-center text-4xl sm:text-5xl animate-float border-2 border-green-200" style={{animationDelay: '1s'}}>
                 🧘
               </div>
             </div>
@@ -305,29 +305,29 @@ export default function Home() {
       </section>
 
       {/* About - Dosha Inspired Design */}
-      <section id="about" className="py-24 bg-gradient-to-b from-green-50 via-emerald-50 to-green-100 relative overflow-hidden">
+      <section id="about" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-b from-green-50 via-emerald-50 to-green-100 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-green-100 to-transparent"></div>
         
-        <div className="container mx-auto px-6 relative">
-          <div className="text-center mb-20">
+        <div className="container mx-auto px-4 sm:px-6 relative">
+          <div className="text-center mb-12 sm:mb-16 md:mb-20">
             <div className="inline-block mb-4">
-              <div className="flex items-center gap-3 px-5 py-2 bg-green-50 rounded-full border border-green-200">
-                <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center">
+              <div className="flex items-center gap-2 sm:gap-3 px-4 sm:px-5 py-2 bg-green-50 rounded-full border border-green-200">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center">
                   <Image src="/logo2.png" alt="Logo" width={20} height={20} className="brightness-0 invert" />
                 </div>
-                <span className="text-green-700 font-semibold text-sm">About Our Practice</span>
+                <span className="text-green-700 font-semibold text-xs sm:text-sm">About Our Practice</span>
               </div>
             </div>
-            <h2 className="text-5xl font-bold mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
               <span className="text-gray-800">Rooted in </span>
               <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">Ancient Wisdom</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
               Personalized Ayurvedic treatments for holistic healing and wellness
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
             {[
               { 
                 icon: '🔥', 
@@ -393,7 +393,7 @@ export default function Home() {
       </section>
 
       {/* Services - Organic Card Layout */}
-      <section id="services" className="py-24 bg-gradient-to-b from-green-100 via-emerald-100 to-green-50 relative overflow-hidden">
+      <section id="services" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-b from-green-100 via-emerald-100 to-green-50 relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <svg className="w-full h-full" viewBox="0 0 100 100">
             <pattern id="leaf-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
@@ -403,17 +403,17 @@ export default function Home() {
           </svg>
         </div>
         
-        <div className="container mx-auto px-6 relative">
-          <div className="text-center mb-20">
+        <div className="container mx-auto px-4 sm:px-6 relative">
+          <div className="text-center mb-12 sm:mb-16 md:mb-20">
             <div className="inline-block mb-4">
-              <div className="flex items-center gap-3 px-5 py-2 bg-white rounded-full border border-green-200 shadow-lg">
-                <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center">
+              <div className="flex items-center gap-2 sm:gap-3 px-4 sm:px-5 py-2 bg-white rounded-full border border-green-200 shadow-lg">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center">
                   <Image src="/logo2.png" alt="Logo" width={20} height={20} className="brightness-0 invert" />
                 </div>
-                <span className="text-green-700 font-semibold text-sm">Our Services</span>
+                <span className="text-green-700 font-semibold text-xs sm:text-sm">Our Services</span>
               </div>
             </div>
-            <h2 className="text-5xl font-bold mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
               <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">Holistic Healing</span>
               <span className="text-gray-800"> Therapies</span>
             </h2>
@@ -464,9 +464,9 @@ export default function Home() {
       </section>
 
       {/* Treatments - Mandala Inspired Grid */}
-      <section id="treatments" className="py-24 bg-gradient-to-b from-green-50 via-emerald-50 to-green-100 relative">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-20">
+      <section id="treatments" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-b from-green-50 via-emerald-50 to-green-100 relative">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-16 md:mb-20">
             <div className="inline-block mb-4">
               <div className="flex items-center gap-3 px-5 py-2 bg-green-50 rounded-full border border-green-200">
                 <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center">
@@ -475,7 +475,7 @@ export default function Home() {
                 <span className="text-green-700 font-semibold text-sm">Specialized Treatments</span>
               </div>
             </div>
-            <h2 className="text-5xl font-bold mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
               <span className="text-gray-800">Traditional </span>
               <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">Ayurvedic Care</span>
             </h2>
@@ -521,10 +521,10 @@ export default function Home() {
       </section>
 
       {/* Contact - Two Box Design */}
-      <section id="contact" className="py-24 bg-gradient-to-b from-green-50 via-emerald-50 to-green-100 relative overflow-hidden">
+      <section id="contact" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-b from-green-50 via-emerald-50 to-green-100 relative overflow-hidden">
         
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-16">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+          <div className="text-center mb-12 sm:mb-16">
             <div className="inline-block mb-4">
               <div className="flex items-center gap-3 px-5 py-2 bg-white rounded-full border-2 border-green-200 shadow-lg">
                 <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center">
@@ -533,17 +533,17 @@ export default function Home() {
                 <span className="text-green-700 font-semibold text-sm">Connect With Us</span>
               </div>
             </div>
-            <h2 className="text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Get In <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">Touch</span>
             </h2>
-            <p className="text-xl text-gray-600">We're here to help you on your wellness journey</p>
+            <p className="text-base sm:text-lg md:text-xl text-gray-600">We're here to help you on your wellness journey</p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
             
             {/* Contact Information Box */}
-            <div className="bg-gradient-to-br from-green-600 to-emerald-600 rounded-3xl p-10 shadow-2xl text-white">
-              <h3 className="text-3xl font-bold mb-8">Contact Information</h3>
+            <div className="bg-gradient-to-br from-green-600 to-emerald-600 rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl text-white">
+              <h3 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">Contact Information</h3>
               
               <div className="space-y-6 mb-10">
                 <div className="flex items-start gap-4 group">
@@ -600,9 +600,9 @@ export default function Home() {
             </div>
 
             {/* Contact Form Box */}
-            <div className="bg-white rounded-3xl p-10 shadow-2xl border-2 border-green-200">
-              <h3 className="text-3xl font-bold text-gray-900 mb-2">Send Us a Message</h3>
-              <p className="text-gray-600 mb-8">Fill out the form and we'll get back to you soon</p>
+            <div className="bg-white rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl border-2 border-green-200">
+              <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Send Us a Message</h3>
+              <p className="text-sm sm:text-base text-gray-600 mb-6 sm:mb-8">Fill out the form and we'll get back to you soon</p>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
