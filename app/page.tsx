@@ -3,6 +3,12 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { createClient } from '@supabase/supabase-js';
+
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+);
 
 interface Service {
   id: number;
@@ -44,16 +50,25 @@ export default function Home() {
 
   const fetchData = async () => {
     try {
-      // Fetch through proxy API routes
-      const [servicesData, treatmentsData, settingsData] = await Promise.all([
-        fetch('/api/proxy/services').then(res => res.json()),
-        fetch('/api/proxy/treatments').then(res => res.json()),
-        fetch('/api/proxy/settings').then(res => res.json())
-      ]);
+      const { data: servicesData } = await supabase
+        .from('services')
+        .select('*')
+        .order('created_at', { ascending: true });
 
-      setServices(servicesData || []);
-      setTreatments(treatmentsData || []);
-      setSettings(settingsData);
+      const { data: treatmentsData } = await supabase
+        .from('treatments')
+        .select('*')
+        .order('created_at', { ascending: true });
+
+      const { data: settingsData } = await supabase
+        .from('settings')
+        .select('*')
+        .limit(1)
+        .single();
+
+      if (servicesData) setServices(servicesData);
+      if (treatmentsData) setTreatments(treatmentsData);
+      if (settingsData) setSettings(settingsData);
     } catch (error) {
       console.error('Error fetching data:', error);
     } finally {
@@ -65,15 +80,19 @@ export default function Home() {
     e.preventDefault();
     
     try {
-      const response = await fetch('/api/proxy/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      const { error } = await supabase
+        .from('contact_messages')
+        .insert([
+          {
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            message: formData.message,
+            read: false
+          }
+        ]);
 
-      if (!response.ok) throw new Error('Failed to send message');
+      if (error) throw error;
 
       alert('Thank you! We will contact you soon.');
       setFormData({ name: '', email: '', phone: '', message: '' });
