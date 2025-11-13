@@ -118,7 +118,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 group-hover:text-green-600 transition-colors">
-                    {settings?.hospital_name || 'Sanjeevani'}
+                    {settings?.hospital_name || 'Sanjeevani Ayurvedic Hospital'}
                   </h1>
                   <p className="text-xs sm:text-sm text-green-600 font-medium hidden sm:block">Ayurvedic Hospital & Wellness Center</p>
                 </div>
