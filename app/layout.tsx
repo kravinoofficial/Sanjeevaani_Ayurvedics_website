@@ -11,6 +11,11 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Sanjeevani Ayurvedic Hospital - Natural Healing & Wellness",
   description: "Experience authentic Ayurvedic treatments and holistic healing at Sanjeevani Ayurvedic Hospital",
+  icons: {
+    icon: '/logo2.png',
+    shortcut: '/logo2.png',
+    apple: '/logo2.png',
+  },
 };
 
 export default function RootLayout({
