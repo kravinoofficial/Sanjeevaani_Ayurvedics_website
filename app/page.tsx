@@ -713,12 +713,12 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="border-t border-white/10 pt-8 text-center">
+          <div className="border-t border-white/10 pt-8 text-center space-y-2">
             <p className="text-green-200">
-              © 2024 {settings?.hospital_name || 'Sanjeevani Ayurvedic Hospital'}. All rights reserved.
+              © 2025 {settings?.hospital_name || 'Sanjeevani Ayurvedic Hospital'}. All rights reserved.
             </p>
-            <p className="text-green-300 text-sm mt-2">
-              🌿 Crafted with care for your wellness journey
+            <p className="text-green-300 text-sm">
+              Website by <a href="https://touchpointe.digital/" target="_blank" rel="noopener noreferrer" className="font-semibold hover:text-white transition-colors underline">Touchpointe Digital</a>
             </p>
           </div>
         </div>
