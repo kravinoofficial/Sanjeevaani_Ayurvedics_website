@@ -6,18 +6,11 @@ export const revalidate = 60;
 
 export async function GET() {
   try {
-    // Add timeout to prevent hanging requests
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
-
     const { data, error } = await supabase
       .from('settings')
       .select('id, hospital_name, contact_phone, contact_email, contact_address, working_hours')
       .limit(1)
-      .single()
-      .abortSignal(controller.signal);
-
-    clearTimeout(timeoutId);
+      .single();
 
     if (error) throw error;
     

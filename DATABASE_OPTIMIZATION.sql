@@ -25,6 +25,7 @@ ANALYZE settings;
 
 -- 4. Optional: Enable Row Level Security (RLS) if not already enabled
 -- This is a security best practice for Supabase
+-- Note: Run these separately if needed, not in a transaction
 
 -- ALTER TABLE services ENABLE ROW LEVEL SECURITY;
 -- ALTER TABLE treatments ENABLE ROW LEVEL SECURITY;
@@ -46,8 +47,6 @@ ANALYZE settings;
 -- CREATE POLICY "Allow public insert to contact_messages" ON contact_messages
 --   FOR INSERT WITH CHECK (true);
 
--- 6. Vacuum tables to reclaim space and update statistics
-VACUUM ANALYZE services;
-VACUUM ANALYZE treatments;
-VACUUM ANALYZE contact_messages;
-VACUUM ANALYZE settings;
+-- Note: VACUUM commands cannot run in Supabase SQL Editor (transaction block)
+-- Supabase automatically handles VACUUM operations
+-- If you need to manually VACUUM, use the Supabase CLI or contact support
