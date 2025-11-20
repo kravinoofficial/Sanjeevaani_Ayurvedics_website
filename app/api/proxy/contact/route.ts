@@ -3,6 +3,10 @@ import { supabase } from '@/lib/supabase';
 
 export async function POST(request: Request) {
   try {
+    // Add timeout to prevent hanging requests
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+
     const body = await request.json();
     
     const { error } = await supabase
@@ -15,7 +19,10 @@ export async function POST(request: Request) {
           message: body.message,
           read: false
         }
-      ]);
+      ])
+      .abortSignal(controller.signal);
+
+    clearTimeout(timeoutId);
 
     if (error) throw error;
     return NextResponse.json({ success: true });
